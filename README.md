@@ -1,66 +1,27 @@
-# node-js-getting-started
+# Node.js Demo App (DevOps Internship Task 1)
 
-A barebones Node.js app using [Express](https://expressjs.com/).
+This is a basic Node.js Express app used for demonstrating CI/CD using GitHub Actions and Docker.
 
-This application supports the tutorials for both the [Cedar and Fir generations](https://devcenter.heroku.com/articles/generations) of the Heroku platform. You can check them out here:
+---
 
-* [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-* [Getting Started on Heroku Fir with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs-fir)
+## 🚀 Task: Automate Code Deployment using CI/CD
 
-## Running Locally
+### ✅ Objective
+Set up a GitHub Actions workflow that builds a Docker image of this app and pushes it to DockerHub on every push to the `main` branch.
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
+### 🔧 Tools Used
+- GitHub Actions
+- Docker & DockerHub
+- Node.js
 
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
+### ⚙️ CI/CD Workflow
+1. Triggered on push to `main`
+2. Installs dependencies
+3. Builds Docker image
+4. Pushes image to DockerHub
 
-Your app should now be running on [localhost:5006](http://localhost:5006/).
-
-## Deploying to Heroku
-
-Using resources for this example app counts towards your usage. [Delete your app](https://devcenter.heroku.com/articles/heroku-cli-commands#heroku-apps-destroy) and [database](https://devcenter.heroku.com/articles/heroku-postgresql#removing-the-add-on) as soon as you are done experimenting to control costs.
-
-### Deploy on [Cedar][cedar]
-
-By default, apps use Eco dynos on [Cedar][cedar] if you are subscribed to Eco. Otherwise, it defaults to Basic dynos. The 
-Eco dynos plan is shared across all Eco dynos in your account and is recommended if you plan on deploying many small apps 
-to Heroku. Learn more about our low-cost plans [here](https://blog.heroku.com/new-low-cost-plans).
-
-Eligible students can apply for platform credits through our new [Heroku for GitHub Students program](https://blog.heroku.com/github-student-developer-program).
-
-```
-$ heroku create
-$ git push heroku main
-$ heroku open
-```
-
-### Deploy on [Fir][fir]
-
-By default, apps on [Fir][fir] use 1X-Classic dynos. To create an app on [Fir][fir] you'll need to 
-[create a private space](https://devcenter.heroku.com/articles/working-with-private-spaces#create-a-private-space)
-first.
-
-```
-$ heroku spaces:create <space-name> --team <team-name> --generation fir
-$ heroku create --space <space-name>
-$ git push heroku main
-$ heroku open
-```
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Getting Started on Heroku Fir with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs-fir)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
-
-[cedar]: https://devcenter.heroku.com/articles/generations#cedar
-[fir]: https://devcenter.heroku.com/articles/generations#fir
+### 📂 File Structure
+.github/workflows/main.yml
+Dockerfile
+index.js
+package.json
